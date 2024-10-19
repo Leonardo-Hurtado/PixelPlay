@@ -1,0 +1,15 @@
+{% extends 'juegos/base_generic.html' %}
+
+{% block title %}Bienvenido{% endblock %}
+
+{% block content %}
+<div class="mt-4 mb-5">
+    <h2>Bienvenido a la página de productos</h2>
+    
+    {% if is_superuser %}
+        <p>Eres un superusuario.</p>
+    {% else %}
+        <p>Eres un usuario normal.</p>
+    {% endif %}
+</div>
+{% endblock %}

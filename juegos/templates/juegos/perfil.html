@@ -1,0 +1,23 @@
+{% extends "juegos/base_generic.html" %}
+
+{% block title %}Perfil de Usuario{% endblock %}
+
+{% block content %}
+<div class="mt-4 mb-5">
+    <h2>Información del Usuario</h2>
+    
+    <p><strong>Username:</strong> {{ user.username }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    
+    {% if user.is_superuser %}
+    <h3>Eres superusuario. Aquí está la lista de todos los usuarios:</h3>
+    <ul>
+        {% for usuario in usuarios %}
+        <li>{{ usuario.username }} - {{ usuario.email }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>Eres un usuario normal.</p>
+    {% endif %}
+</div>
+{% endblock %}

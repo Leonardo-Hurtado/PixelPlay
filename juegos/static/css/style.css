@@ -1,0 +1,246 @@
+:root {
+    --background: #121115;
+}
+
+/* Estilos generales */
+body {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    background: var(--background);
+    padding: 0 20px;
+    border-bottom: 2px solid #A5D8FF;
+}
+
+form {
+    color: #f4f4f4;
+    font-size: 17px;
+}
+
+footer {
+    background: var(--background);
+    color: #f4f4f4;
+    padding: 15px;
+    text-align: center;
+    border-top: 2px solid #A5D8FF;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo img {
+    max-width: 180px;
+    height: auto;
+}
+
+.nav-link {
+    background: radial-gradient(
+    circle at 100%,
+    #d3a4ff,
+    #7dc7ff 30%,
+    #887dff 60%,
+    #dbb5ff 90%
+    );
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+    border: none;
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animatedTextGradient 1.5s linear infinite;
+}
+
+.button-primary {
+    background: linear-gradient(135deg, #c281ff, #5ab1f3, #bf7dfe);
+    background-size: 200% 200%;
+    animation: iridescent 1.5s ease infinite;
+}
+
+.button-warning {
+    background: linear-gradient(135deg, #da8c32, #dabd39, #95c328);
+    background-size: 200% 200%;
+    animation: iridescent 1.5s ease infinite;
+}
+
+.button-danger {
+    background: linear-gradient(135deg, #c85341, #cc3a3a, #a32457);
+    background-size: 200% 200%;
+    animation: iridescent 1.5s ease infinite;
+}
+
+.button-success {
+    background: linear-gradient(135deg, #41adc8, #3a6bcc, #2433a3);
+    background-size: 200% 200%;
+    animation: iridescent 1.5s ease infinite;
+}
+
+/* Estilos del sidebar */
+.sidebar {
+    width: 250px;
+    background-color: var(--background);
+    color: #f4f4f4;
+    padding: 20px;
+}
+
+.sidebar-link {
+    font-size: 24px;
+    color: #f4f4f4;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: block;
+    font-weight: bold;
+}
+
+.sidebar-link:hover {
+    color: #f4f4f4;
+    text-decoration: none;
+}
+
+.lista {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.lista li {
+    margin-bottom: 20px;
+}
+
+.lista a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #f4f4f4;
+    border-bottom: 2px solid #A5D8FF;
+    display: block;
+    padding: 15px;
+    background-color: var(--background);
+    transition: background-color 0.3s ease;
+}
+
+.lista a:hover {
+    background-color: var(--background);
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--background);
+}
+
+.search-bar {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 12px 20px;
+    border: transparent;
+    border-bottom: 2px solid #D4A5FF;
+    border-right: transparent;
+    outline: none;
+    background-color: var(--background);
+    color: #f4f4f4;
+    font-size: 16px;
+}
+
+.search-bar button {
+    padding: 12px 25px;
+    border: 2px solid transparent;
+    border-radius: 0 10px 10px 0;
+    background: linear-gradient(135deg, #c281ff, #7dc7ff, #bf7dfe);
+    background-size: 200% 200%;
+    animation: iridescent 1.5s ease infinite;
+    color: #f4f4f4;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.search-bar button:hover {
+    color: #ffffff;
+    background-color: var(--background);
+}
+
+.game-card {
+    position: relative;
+    background-color: var(--background);
+    border: 1px solid var(--background);
+    border-radius: 7px;
+    padding: 14px 12px;
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-card > img {
+    max-width: 100%;
+    height: auto;
+    height: 150px !important;
+    border-radius: 5px;
+}
+
+.game-card > h3 {
+    margin-top: 15px;
+}
+
+.game-card-link {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.game-card-link:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.game-card:hover {
+    background: linear-gradient(135deg, #c281ff, #7dc7ff, #bf7dfe);
+    background-size: 200% 200%;
+    animation: iridescent 1.5s ease infinite;
+}
+
+/* Ajuste del tamaño de la imagen del juego */
+.game-description img {
+    width: 100%;
+    display: flex;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Animación del gradiente iridiscente */
+@keyframes iridescent {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes animatedTextGradient {
+    to {
+      background-position: 200% center;
+    }
+}

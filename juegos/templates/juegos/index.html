@@ -1,0 +1,37 @@
+{% extends "juegos/base_generic.html" %}
+{% load static %}
+
+{% block content %}
+    <main class="row">
+        <aside class="sidebar col-2">
+            <a href="#categorias" class="sidebar-link">Categorías</a>
+            <ul class="lista">
+                {% for categoria in categorias %}
+                    <li><a href="{% url 'detalle_categoria' categoria.pk %}">{{ categoria.nombre }}</a></li>
+                {% endfor %}
+            </ul>
+        </aside>
+        <section class="main-content col-10 mr-5">
+            <form method="GET" action="{% url 'index' %}">
+                    <div class="search-bar">
+                        <input type="text" name="q" placeholder="Buscar juegos...">
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
+
+            <div class="row justify-content-center">
+                {% for juego in juegos %}
+                    <div class="col-lg-4 col-md-6 col-sm-8 col-12">
+                        <a href="{% url 'detalle_juego' juego.id %}" class="game-card-link">
+                            <div class="game-card">
+                                <img src="{{ juego.thumbnail }}" alt="The Forest">
+                                <h3>{{ juego.title }}</h3>
+                                <p>{{ juego.precio }} CLP</p>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+{% endblock %}

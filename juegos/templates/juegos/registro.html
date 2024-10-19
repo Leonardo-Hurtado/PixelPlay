@@ -1,0 +1,15 @@
+{% extends "juegos/base_generic.html" %}
+
+{% block title %}Registrar Usuario{% endblock %}
+
+{% block content %}
+<div class="mt-4 mb-5">
+    <h2 class="mb-3">Registrar Usuario</h2>
+    <form method="post" class="mb-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-dark button-primary">Registrar</button>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

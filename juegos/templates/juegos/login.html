@@ -1,0 +1,23 @@
+{% extends 'juegos/base_generic.html' %}
+
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+<div class="my-4">
+    <h2 class="mb-3">Iniciar Sesión</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <a href="{% url 'password_reset' %}" class="nav-link fw-light">¿Olvidaste tu contraseña?</a>
+        <button type="submit" class="btn btn-dark my-3 button-primary">Iniciar Sesión</button>
+    </form>
+    <div class="d-flex">
+    <p>
+        ¿No tienes cuenta? 
+    </p>
+    <a href="{% url 'registro' %}" class="nav-link">
+        Regístrate aquí
+    </a>
+    </div>
+</div>
+{% endblock %}

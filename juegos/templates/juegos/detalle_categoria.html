@@ -1,0 +1,23 @@
+{% extends "juegos/base_generic.html" %}
+{% load static %}
+
+{% block content %}
+<main class="row p-5">
+    <h1>{{ categoria.nombre }}</h1>
+    <div class="row justify-content-center">
+        {% for juego in juegos %}
+            <div class="col-sm-3 col-12">
+                <a href="{% url 'detalle_juego' juego.id %}" class="game-card-link">
+                    <div class="game-card">
+                        <img src="{{ juego.thumbnail }}" alt="{{ juego.title }}">
+                        <h3>{{ juego.title }}</h3>
+                        <p>{{ juego.precio }} CLP</p>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}
+
+

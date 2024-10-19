@@ -1,0 +1,33 @@
+{% extends 'juegos/base_generic.html' %}
+
+{% block title %}Lista de Categorias{% endblock %}
+
+{% block content %}
+<div class="mt-4 mb-5">
+    <h2 class="mb-3">Lista de Categorias</h2>
+    <a href="{% url 'crear_producto' %}" class="btn btn-dark button-primary mb-3">Crear Categoria</a>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>
+                    <a href="{% url 'editar_producto' producto.pk %}" class="btn btn-sm btn-dark button-warning">Editar</a>
+                    <a href="{% url 'eliminar_producto' producto.pk %}" class="btn btn-sm btn-dark button-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3">No hay categorias disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
